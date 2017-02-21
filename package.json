@@ -1,0 +1,19 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "my first blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmcesummer/express-blog.git"
+  },
+  "author": "cmce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmcesummer/express-blog/issues"
+  },
+  "homepage": "https://github.com/cmcesummer/express-blog#readme"
+}
