@@ -34,6 +34,23 @@ app.use(session({
 //flash中间件
 app.use(flash());
 
+//设置模板全局常亮
+app.locals.blog = {
+	title: pkg.name,
+	description: pkg.description
+}
+
+//app.locals 上通常挂载常量信息（如博客名、描述、作者信息），
+//res.locals 上通常挂载变量信息，即每次请求可能的值都不一样（如请求者信息，res.locals.user = req.session.user）
+
+//添加模板必须的三个变量
+app.use(function(req, res, next) {
+	res.locals.user = req.session.user;
+	res.locals.success = req.flash('success').toString();
+	res.locals.error = req.flash('error').toString();
+	next();
+})
+
 routes(app);
 
 app.listen(config.port, function() {
