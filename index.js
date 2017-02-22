@@ -5,6 +5,7 @@ var path = require('path'),
 	flash = require('connect-flash'),
 	config = require('config-lite'),
 	routes = require('./routes'),
+	formidable = require('express-formidable'),
 	pkg = require('./package');
 
 var app = express();
@@ -33,6 +34,12 @@ app.use(session({
 
 //flash中间件
 app.use(flash());
+
+//处理表单及文件上传的中间件
+app.use(formidable({
+	uploadDir: path.join(__dirname, 'public/img'),
+	keepExtensions: true //保留后缀
+}))
 
 //设置模板全局常亮
 app.locals.blog = {

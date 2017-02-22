@@ -6,7 +6,7 @@ var checkLogin = require('../middlewares/check').checkLogin;
 //GET /posts  页面
 //     例如 GET   /post?author=123
 router.get('/', function(req, res, next) {
-	res.send(res.flash());
+	res.render('posts');
 });
 
 //POST  /posts 发表文章
